@@ -3,9 +3,9 @@ define(function (require, exports, module) {
 var marionette = require('marionette');
 
 var CategoryItemView = require('./category').CategoryItemView;
-var template = require('hbs!../templates/categories');
-var Categories = require('app/synergy/collections').Categories;
-
+var template         = require('hbs!../templates/categories');
+var Categories       = require('app/synergy/collections').Categories;
+var Tasks            = require('app/synergy/collections').Tasks;
 
 var CategoriesCompositeView =  marionette.CompositeView.extend({
     itemView : CategoryItemView,
@@ -23,7 +23,12 @@ var CategoriesCompositeView =  marionette.CompositeView.extend({
 
     },
     onAddClick: function(e){
-        this.collection.add({label:'Project Name'});
+        this.collection.add({tasks: new Tasks()});
+        var model = this.collection.at(this.collection.length-1);
+        var view = this.children.findByModel(model);
+        view.trigger('focused');
+        view.highlightForEdit();
+
     },
 
     onItemViewClicked: function(view){
@@ -31,7 +36,7 @@ var CategoriesCompositeView =  marionette.CompositeView.extend({
             if(each != view){
                 each.showSelected(false);
             }
-        })
+        });
         view.showSelected(true);
     },
 

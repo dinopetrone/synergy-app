@@ -53,12 +53,28 @@ var ListItem = marionette.ItemView.extend({
         this.hideEditView();
     },
 
-    onShow : function(){
+    onRender: function(){
         this.stickit();
-        this.ui.label.toggle();
+    },
+
+    onShow : function(){
+        this.ui.input.hide();
+    },
+
+    highlightForEdit: function(){
+        this.ui.label.hide();
+        this.ui.input.show();
         this.ui.input.select();
-        this.trigger('focused');
-    }
+    },
+
+    showSelected : function(bool){
+        if(!bool){
+            this.$el.removeClass('active');
+            this.hideEditView();
+        }else{
+            this.$el.addClass('active');
+        }
+    },
 });
 
 exports.ListItem = ListItem;
