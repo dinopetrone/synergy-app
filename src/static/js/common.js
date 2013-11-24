@@ -51,6 +51,7 @@ require.config({
             // built references
             'marionette': 'backbone/marionette',
             'modernizr': 'vendor/modernizr/modernizr',
+            'backbone.localStorage': 'vendor/backbone/backbone-localStorage',
 
             // hbs names
             'Handlebars': 'handlebars',
@@ -79,6 +80,11 @@ require.config({
     'backbone/stickit' : {
       'deps' : ['backbone'],
       'exports' : 'Stickit'
+    },
+
+    'backbone/backbone-localStorage' : {
+      'deps' : ['backbone'],
+      'exports' : 'backbone.localStorage'
     },
 
     'backbone/validation' : {

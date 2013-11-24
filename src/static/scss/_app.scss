@@ -6,7 +6,16 @@
         min-height:400px;
     }
     .categories{
-
+        .add{
+            @extend .btn-success;
+            margin-bottom: 20px;
+        }
+        input{
+            width:100%;
+        }
+        .list-group-item.active{
+            background-color: red;
+        }
     }
     .tasks{
 

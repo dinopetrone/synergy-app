@@ -2,20 +2,21 @@ define(function (require, exports, module) {
 
 var marionette = require('marionette');
 var template = require('hbs!../templates/category');
+var ListItem = require('./list-item').ListItem;
 
-var CategoryItemView = marionette.ItemView.extend({
-    tagName: 'li',
-    className: 'list-group-item',
+var CategoryItemView = ListItem.extend({
     template : template,
-    ui : {
+    events : _.extend({
 
+    }, ListItem.prototype.events),
+    showSelected : function(bool){
+        if(!bool){
+            this.$el.removeClass('active');
+        }else{
+            this.$el.addClass('active');
+        }
     },
-    events : {
 
-    },
-    initialize : function(){
-
-    }
 });
 
 exports.CategoryItemView = CategoryItemView;

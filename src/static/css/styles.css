@@ -1852,23 +1852,23 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
     background-color: #d9534f;
     border-color: #d43f3a; }
 
-.btn-success {
+.btn-success, .app-container .categories .add {
   color: white;
   background-color: #5cb85c;
   border-color: #4cae4c; }
-  .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
+  .btn-success:hover, .app-container .categories .add:hover, .btn-success:focus, .app-container .categories .add:focus, .btn-success:active, .app-container .categories .add:active, .btn-success.active, .app-container .categories .active.add {
     color: white;
     background-color: #47a447;
     border-color: #398439; }
-  .open .btn-success.dropdown-toggle {
+  .open .btn-success.dropdown-toggle, .open .app-container .categories .dropdown-toggle.add, .app-container .categories .open .dropdown-toggle.add {
     color: white;
     background-color: #47a447;
     border-color: #398439; }
-  .btn-success:active, .btn-success.active {
+  .btn-success:active, .app-container .categories .add:active, .btn-success.active, .app-container .categories .active.add {
     background-image: none; }
-  .open .btn-success.dropdown-toggle {
+  .open .btn-success.dropdown-toggle, .open .app-container .categories .dropdown-toggle.add, .app-container .categories .open .dropdown-toggle.add {
     background-image: none; }
-  .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
+  .btn-success.disabled, .app-container .categories .disabled.add, .btn-success.disabled:hover, .app-container .categories .disabled.add:hover, .btn-success.disabled:focus, .app-container .categories .disabled.add:focus, .btn-success.disabled:active, .app-container .categories .disabled.add:active, .btn-success.disabled.active, .app-container .categories .disabled.active.add, .btn-success[disabled], .app-container .categories [disabled].add, .btn-success[disabled]:hover, .app-container .categories [disabled].add:hover, .btn-success[disabled]:focus, .app-container .categories [disabled].add:focus, .btn-success[disabled]:active, .app-container .categories [disabled].add:active, .btn-success[disabled].active, .app-container .categories [disabled].active.add, fieldset[disabled] .btn-success, fieldset[disabled] .app-container .categories .add, .app-container .categories fieldset[disabled] .add, fieldset[disabled] .btn-success:hover, fieldset[disabled] .app-container .categories .add:hover, .app-container .categories fieldset[disabled] .add:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .app-container .categories .add:focus, .app-container .categories fieldset[disabled] .add:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .app-container .categories .add:active, .app-container .categories fieldset[disabled] .add:active, fieldset[disabled] .btn-success.active, fieldset[disabled] .app-container .categories .active.add, .app-container .categories fieldset[disabled] .active.add {
     background-color: #5cb85c;
     border-color: #4cae4c; }
 
@@ -2694,13 +2694,15 @@ input[type="button"].btn-block {
     left: auto; } }
 .btn-default .caret {
   border-top-color: #333333; }
-.btn-primary .caret, .btn-success .caret, .btn-warning .caret, .btn-danger .caret, .btn-info .caret {
+.btn-primary .caret, .btn-success .caret, .app-container .categories .add .caret, .btn-warning .caret, .btn-danger .caret, .btn-info .caret {
   border-top-color: #fff; }
 
 .dropup .btn-default .caret {
   border-bottom-color: #333333; }
 .dropup .btn-primary .caret,
 .dropup .btn-success .caret,
+.dropup .app-container .categories .add .caret,
+.app-container .categories .dropup .add .caret,
 .dropup .btn-warning .caret,
 .dropup .btn-danger .caret,
 .dropup .btn-info .caret {
@@ -4999,3 +5001,9 @@ td.visible-print {
     display: none !important; } }
 .app-container .lane {
   min-height: 400px; }
+.app-container .categories .add {
+  margin-bottom: 20px; }
+.app-container .categories input {
+  width: 100%; }
+.app-container .categories .list-group-item.active {
+  background-color: red; }
