@@ -1,22 +1,21 @@
 define(function(require, exports, module) {
 
-var marionette = require('marionete');
-var handlebars = require('handlebars');
+var AppController = require('./controller').AppController;
+require('./renderer');
 
-marionette.TemplateCache.prototype.compileTemplate = function(rawTemplate){
-    return handlebars.compile(rawTemplate);
-};
-
-var SampleView = require('app/sample/views').SampleView;
 
 function main(options){
     var app = this;
 
     app.addRegions({
-        window: '#window'
+        categories:'categories',
+        tasks:'tasks',
+        inProgress:'in-progress',
+        completed:'completed'
     });
 
-    app.window.show(new SampleView());
+    new AppController({app:this});
+
 }
 
 exports.main = main;
