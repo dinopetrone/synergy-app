@@ -3,7 +3,9 @@
         @extend .col-md-3;
         @extend .col-sm-3;
         @extend .col-lg-3;
-        min-height:400px;
+        .list-group{
+            min-height:400px;
+        }
     }
     button.add{
         @extend .btn-success;

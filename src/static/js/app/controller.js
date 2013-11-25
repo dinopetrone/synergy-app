@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 var marionette = require('marionette');
 var CategoriesCompositeView = require('./synergy/views/categories').CategoriesCompositeView;
 var TasksCompositeView = require('./synergy/views/tasks').TasksCompositeView;
-var InProgressCollectionView = require('./synergy/views/in-progress').InProgressCollectionView;
+var InProgressCompositeView = require('./synergy/views/in-progress').InProgressCompositeView;
 var CompletedCompositeView = require('./synergy/views/completed').CompletedCompositeView;
 
 var AppController = marionette.Controller.extend({
@@ -15,7 +15,7 @@ var AppController = marionette.Controller.extend({
 
         this.app.categories.show(this.categoriesCompositeView);
 
-        this.app.inProgress.show(new InProgressCollectionView());
+        this.app.inProgress.show(new InProgressCompositeView());
         this.app.completed.show(new CompletedCompositeView());
     },
     onCategorySwitch: function(view){

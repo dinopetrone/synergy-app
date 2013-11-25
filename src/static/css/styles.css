@@ -4999,7 +4999,7 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
-.app-container .lane {
+.app-container .lane .list-group {
   min-height: 400px; }
 .app-container button.add {
   margin-bottom: 20px; }

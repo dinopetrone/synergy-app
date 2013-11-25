@@ -25,7 +25,17 @@ var DragAndDropCollectionView =  marionette.CollectionView.extend({
             dataType:options.dataType
         });
         this.dragDropList.setDropElement(this.$el);
+        this.on('show', this.onShow);
     },
+
+    onClose: function(){
+        this.dragDropList.close();
+    },
+
+    onShow: function(){
+
+    },
+
 
     getViewForEl: function($el){
         return this.getViewForId(getElementId($el));
@@ -77,6 +87,11 @@ var DragAndDropCollectionView =  marionette.CollectionView.extend({
     },
 
     appendHtml: function(collectionView, itemView, index){
+        if(this.itemViewContainer){
+            this.dragDropList.setDropElement(this.$el.find(this.itemViewContainer));
+        }else{
+            this.dragDropList.setDropElement(this.$el);
+        }
         this.dragDropList.insertDragElement(index, itemView.$el);
 
     },
