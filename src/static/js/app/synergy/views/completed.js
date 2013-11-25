@@ -2,7 +2,7 @@ define(function (require, exports, module) {
 
 var DragAndDropCompositeView = require('built/ui/views/composite/drag-and-drop').DragAndDropCompositeView;
 var TaskItemView = require('./task').TaskItemView;
-var Tasks = require('../collections').Tasks;
+var Tasks = require('../collections/tasks').Tasks;
 var template = require('hbs!../templates/completed');
 
 var CompletedCompositeView =  DragAndDropCompositeView.extend({

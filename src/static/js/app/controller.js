@@ -19,7 +19,7 @@ var AppController = marionette.Controller.extend({
         this.app.completed.show(new CompletedCompositeView());
     },
     onCategorySwitch: function(view){
-        var collection = view.model.get('tasks');
+        var collection = view.model.tasks;
         this.app.tasks.show(new TasksCompositeView({collection:collection}));
     },
 

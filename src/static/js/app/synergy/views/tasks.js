@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 var marionette = require('marionette');
 var DragAndDropCompositeView = require('built/ui/views/composite/drag-and-drop').DragAndDropCompositeView;
 var TaskItemView = require('./task').TaskItemView;
-var Tasks = require('app/synergy/collections').Tasks;
+var Tasks = require('app/synergy/collections/tasks').Tasks;
 var template = require('hbs!../templates/tasks');
 
 
@@ -23,7 +23,7 @@ TasksCompositeView = DragAndDropCompositeView.extend({
     },
 
     onAddClick: function(e){
-        this.collection.add({});
+        this.collection.create({});
         var model = this.collection.at(this.collection.length-1);
         var view = this.children.findByModel(model);
         view.trigger('focused');
